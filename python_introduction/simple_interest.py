@@ -1,8 +1,11 @@
 # define the variables
-principal_amount  = 1000
-rate_of_interest = 5 / 100
-time_period = 3
-# calculate simple interest
-simple_interest = principal_amount * rate_of_interest * time_period
-# print the result
-print("The simple interest is:", simple_interest)
+principal = 1000
+rate = 0.05
+# define the variables
+principal = 1000
+rate = 0.05
+time = 3
+
+# calculate simple interest using the formula: I = P * R * T
+interest = principal * rate * time
+print(f"The simple interest is: {interest}")
