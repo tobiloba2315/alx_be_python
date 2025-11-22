@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
 # Ask user for number of days
 try:
-  days_to_add = int(input("\nEnter number of days to add:"))
+  days_to_add = int(input("\nEnter the number of days to add to the current date:"))
   calculate_future_date(days_to_add)
 except ValueError:
       print("Invalid input! Please enter an integer.")
