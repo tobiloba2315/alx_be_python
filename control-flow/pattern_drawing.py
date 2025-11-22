@@ -1,19 +1,13 @@
-def get_positive_int(prompt="Enter the size of the pattern:"):
-    while True:
-        try:
-            n = int(input(prompt))
-            if n > 0:
-                return n
-            print("Please enter a positive integer.")
-        except ValueError:
-            print("Please enter a positive integer.")
+# Prompt the user to enter a positive integer
+n = int(input("Enter a positive integer:"))
 
-def draw_square(n):
-    for _ in range(n):
-        print("* " * n)
+# Ensure the input is positive
+if n > 0:
+    # Use nested loops to print a square pattern
+    for i in range(n):
+        for j in range(n):
+            print("*", end=" ")
+        print()  # Move to the next line after each row
+else:
+    print("Please enter a positive integer.")
 
-if __name__ == "__main__":
-    size = get_positive_int()
-    draw_square(size)
-
-    
