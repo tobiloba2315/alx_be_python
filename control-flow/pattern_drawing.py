@@ -1,3 +1,5 @@
+# Ask the user to input a positive integer
+size = int(input("Enter the size of the pattern:"))
 # Prompt the user to enter a positive integer
 n = int(input("Enter a positive integer:"))
 
