@@ -8,12 +8,12 @@ from datetime import datetime, timedelta
 def display_current_datetime():
  current_date = datetime.now() 
  # Save current date and time
-print("Current Date and Time:",current_date.strftime("%Y-%m-%d %H:%M:%S"))
+print("Current Date and Time:",'current_date.strftime'("%Y-%m-%d %H:%M:%S"))
 
 # Part 2: Function to calculate a future date
 def calculate_future_date(days):
  current_date = datetime.now()
-future_date = current_date + timedelta(days=number_of_days) 
+future_date = "current_date + timedelta(days='number_of_days')" 
 # Save future date
 print("Future Date:", future_date.strftime("%Y-%m-%d"))
 
