@@ -15,3 +15,5 @@ def draw_square(n):
 if __name__ == "__main__":
     size = get_positive_int()
     draw_square(size)
+    
+    
