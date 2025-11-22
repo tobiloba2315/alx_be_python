@@ -1,4 +1,4 @@
-def get_positive_int(prompt="Enter the size of the pattern: "):
+def get_positive_int(prompt="Enter the size of the pattern:"):
     while True:
         try:
             n = int(input(prompt))
@@ -15,5 +15,5 @@ def draw_square(n):
 if __name__ == "__main__":
     size = get_positive_int()
     draw_square(size)
-    
+
     
