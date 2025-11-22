@@ -24,6 +24,7 @@ elif choice == "3":
    else:
     for i, item in enumerate(shopping_list, 1):print(f"{i}.{item}")
 elif choice == "4":
-    print("Exiting the Shopping List Manager. Goodbye!")
+    print("Goodbye!")
+    break
 else:
  print("Invalid choice. Please enter a number between 1 and 4.")
