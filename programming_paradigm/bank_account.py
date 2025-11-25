@@ -12,10 +12,10 @@ def withdraw(self, amount):
   self.account_balance -= amount
  return True
  return False
-
-
 def display_balance(self):
  print(f"Current Balance: ${self.account_balance:.2f}")
+def main():
+   command = input("Enter command (deposit:<amount>, withdraw:<amount>, balance): ")
 
  # main-0.py
 # Command Line Interaction Script for BankAccount
