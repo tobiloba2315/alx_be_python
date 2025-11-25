@@ -27,14 +27,14 @@ account = BankAccount()
 
 if len(sys.argv) < 2:
     print("Usage: python main-0.py <operation> [amount]")
-    print("Operations: deposit, withdraw, balance")
+    print("Operations:deposit,withdraw or balance")
     sys.exit()
 
 operation = sys.argv[1].lower()
 
 if operation == "deposit":
     if len(sys.argv) != 3:
-        print("Usage: python main-0.py deposit <amount>")
+        print("Usage: python main-0.py deposit <$50>")
         sys.exit()
     try:
         amount = float(sys.argv[2])
@@ -46,7 +46,7 @@ if operation == "deposit":
 
 elif operation == "withdraw":
     if len(sys.argv) != 3:
-        print("Usage: python main-0.py withdraw <amount>")
+        print("Usage: python main-0.py withdraw <$20>")
         sys.exit()
     try:
         amount = float(sys.argv[2])
