@@ -15,7 +15,7 @@ def withdraw(self, amount):
 
 
 def display_balance(self):
- print(f"Current Account Balance: ${self.account_balance:.2f}")
+ print(f"Current Balance: ${self.account_balance:.2f}")
 
  # main-0.py
 # Command-line interface for BankAccount operations
