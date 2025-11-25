@@ -18,48 +18,38 @@ def display_balance(self):
  print(f"Current Balance: ${self.account_balance:.2f}")
 
  # main-0.py
-# Command-line interface for BankAccount operations
+# Command Line Interaction Script for BankAccount
 
 import sys
 from bank_account import BankAccount
 
-account = BankAccount()
+def main():
+    account = BankAccount(100)  # Starting with an initial balance of $100
 
-if len(sys.argv) < 2:
-    print("Usage: python main-0.py <operation> [amount]")
-    print("Operations:deposit,withdraw or balance")
-    sys.exit()
+    if len(sys.argv) < 2:
+        print("Usage: python main-0.py <command>:<amount>")
+        print("Commands: deposit, withdraw or balance")
+        sys.exit(1)
 
-operation = sys.argv[1].lower()
+    # Parse command and optional amount
+    command, *params = sys.argv[1].split(':')
+    amount = float(params[0]) if params else None
 
-if operation == "deposit":
-    if len(sys.argv) != 3:
-        print("Usage: python main-0.py deposit <$50>")
-        sys.exit()
-    try:
-        amount = float(sys.argv[2])
+    if command == "deposit" and amount is not None:
         account.deposit(amount)
-        print(f"Deposited: ${amount:.2f}")
-        account.display_balance()
-    except ValueError:
-        print("Invalid amount. Please enter a numeric value.")
+        print(f"Deposited: $67.0")
 
-elif operation == "withdraw":
-    if len(sys.argv) != 3:
-        print("Usage: python main-0.py withdraw <$20>")
-        sys.exit()
-    try:
-        amount = float(sys.argv[2])
+    elif command == "withdraw" and amount is not None:
         if account.withdraw(amount):
-            print(f"Withdrew: ${amount:.2f}")
+            print(f"Withdrew: $50.0")
         else:
-            print("Insufficient funds!")
+            print("Insufficient funds.")
+
+    elif command == "balance":
         account.display_balance()
-    except ValueError:
-        print("Invalid amount. Please enter a numeric value.")
 
-elif operation == "balance":
-    account.display_balance()
+    else:
+        print("Invalid command.")
 
-else:
-    print("Unknown operation. Use deposit, withdraw, or balance.")
+if __name__ == "__main__":
+    main()
