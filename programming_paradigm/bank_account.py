@@ -1,8 +1,8 @@
 # bank_account.py
 
 class BankAccount:
-    def __init__(self, initial_balance=0):
-        self.__account_balance = initial_balance  # private attribute for encapsulation
+    def __init__(self, account_balance: float=0.00):
+        self.__account_balance = account_balance  # private attribute for encapsulation
 
     def deposit(self, amount):
         if amount > 0:
@@ -22,7 +22,7 @@ class BankAccount:
 from bank_account import BankAccount
 
 def main():
-    account = BankAccount(250) # Initial balance set to $250 
+    account = BankAccount(250) # Initial balance set to $250
     if len(sys.argv) < 2:
         print("Usage: python main.py <command>:<amount>")
         print("Commands: deposit, withdraw, display")
