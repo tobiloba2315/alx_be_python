@@ -1,20 +1,14 @@
 class Calculator:
-    # Class Attribute
+    """A class to demonstrate static and class methods."""
     calculation_type = "Arithmetic Operations"
 
     @staticmethod
     def add(a, b):
-        """Return the sum of two numbers."""
+        """Static method to calculate the sum of two numbers."""
         return a + b
 
     @classmethod
     def multiply(cls, a, b):
-        """Return the product of two numbers and print the class attribute."""
-        print(f"Calculation Type: {cls.calculation_type}")
+        """Class method to calculate the product of two numbers and print the calculation type."""
+        print(f"Calculation type: {cls.calculation_type}")
         return a * b
-
-
-# Example usage (optional):
-if __name__ == "__main__":
-    print("Addition:", Calculator.add(5, 10))
-    print("Multiplication:", Calculator.multiply(5, 10))
