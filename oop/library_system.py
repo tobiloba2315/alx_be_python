@@ -17,6 +17,7 @@ class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)  # Call base class constructor
         self.page_count = page_count     # Additional attribute unique to PrintBook
+        
 
 
 # Composition - Library class
@@ -37,3 +38,23 @@ class Library:
                 print(f"Print Book: {book.title} by {book.author}, Pages: {book.page_count}")
             else:
                 print(f"Book: {book.title} by {book.author}")
+
+                from library_system import Book, EBook, PrintBook, Library
+
+def main():
+    # Create a Library instance
+    library = Library()
+
+    # Add different types of books
+    library.add_book(Book("Things Fall Apart", "Chinua Achebe"))
+    library.add_book(EBook("Digital Fortress", "Dan Brown", 5))
+    library.add_book(PrintBook("Harry Potter", "J.K. Rowling", 500))
+
+    # Display the books in the library
+    print("Books in the Library:\n")
+    library.list_books()
+
+
+if __name__ == "__main__":
+    main()
+
