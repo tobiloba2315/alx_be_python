@@ -16,5 +16,5 @@ class Calculator:
 
 # Example usage (optional):
 if __name__ == "__main__":
-    print("Addition:", Calculator.add(5, 7))
-    print("Multiplication:", Calculator.multiply(4, 3))
+    print("Addition:", Calculator.add(5, 10))
+    print("Multiplication:", Calculator.multiply(5, 10))
