@@ -1,60 +1,40 @@
-# Base Class - Book
 class Book:
-    def __init__(self, title, author):
+    def __init__(self, title: str, author: str):
         self.title = title
         self.author = author
 
+    def __str__(self):
+        return f"Book: {self.title} by {self.author}"
 
-# Derived Class - EBook
+
 class EBook(Book):
-    def __init__(self, title, author, file_size):
-        super().__init__(title, author)  # Call base class constructor
-        self.file_size = file_size      # Additional attribute unique to EBook
+    def __init__(self, title: str, author: str, file_size: int):
+        super().__init__(title, author)
+        self.file_size = file_size
+
+    def __str__(self):
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
-# Derived Class - PrintBook
 class PrintBook(Book):
-    def __init__(self, title, author, page_count):
-        super().__init__(title, author)  # Call base class constructor
-        self.page_count = page_count     # Additional attribute unique to PrintBook
-        
+    def __init__(self, title: str, author: str, page_count: int):
+        super().__init__(title, author)
+        self.page_count = page_count
+
+    def __str__(self):
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
-# Composition - Library class
 class Library:
     def __init__(self):
-        self.books = []  # A list to store Book, EBook, and PrintBook objects
+        self.books = []
 
     def add_book(self, book):
-        """Adds a book to the library"""
-        self.books.append(book)
+        if isinstance(book, Book):
+            self.books.append(book)
+        else:
+            raise ValueError("Only instances of Book or its subclasses can be added to the library.")
 
     def list_books(self):
-        """Prints details of each book in the library"""
         for book in self.books:
-            if isinstance(book, EBook):
-                print(f"E-Book: {book.title} by {book.author}, File Size: {book.file_size}MB")
-            elif isinstance(book, PrintBook):
-                print(f"Print Book: {book.title} by {book.author}, Pages: {book.page_count}")
-            else:
-                print(f"Book: {book.title} by {book.author}")
-
-                from library_system import Book, EBook, PrintBook, Library
-
-def main():
-    # Create a Library instance
-    library = Library()
-
-    # Add different types of books
-    library.add_book(Book("Things Fall Apart", "Chinua Achebe"))
-    library.add_book(EBook("Digital Fortress", "Dan Brown", 5))
-    library.add_book(PrintBook("Harry Potter", "J.K. Rowling", 500))
-
-    # Display the books in the library
-    print("Books in the Library:\n")
-    library.list_books()
-
-
-if __name__ == "__main__":
-    main()
-
+            print(book)
